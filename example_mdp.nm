@@ -10,7 +10,7 @@ mdp
 module M 
 	
 	h : [0..1]; // high input (minority, non-minority respectively)
-	l : [0..2]; // low output (0, hired, not-hired respectively)
+	l : [0..2] init 0; // low output (0, hired, not-hired respectively)
 	x : [0..4] init 0; // intermediate states   
 	
 	[] (h=0)&(l=0) ->	0.0899 : (x'=1) + 0.9101 : (x'=2); // High input of being a minority, transition using a compound probability of yExp - ColRank > 0
