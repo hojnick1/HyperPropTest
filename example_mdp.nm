@@ -11,7 +11,7 @@ module M
 	
 	h : [0..1]; // high input (minority, non-minority respectively)
 	l : [0..2] init 0; // low output (0, hired, not-hired respectively)
-	x : [0..2] init 0; // intermediate states   
+	x : [0..2]; // intermediate states   
 	
 	[] (h=0)&(l=0) -> 0.0062 : (l'=1) + 0.9938 : (x'=1);
 	[] (h=1)&(l=0) -> 0.02275 : (l'=1) + 0.97725 : (x'=2);	
