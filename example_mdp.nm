@@ -11,10 +11,13 @@ module M
 	
 	h : [0..1]; // high input (minority, non-minority respectively)
 	l : [0..2] init 0; // low output (0, hired, not-hired respectively)
-	//x : [0..4] init 0; // intermediate states   
+	x : [0..2] init 0; // intermediate states   
 	
-	[m] (h=0)&(l=0) ->	0.0899 : (l'=1) + 0.9101 : (l'=2); // High input of being a minority, transition using a compound probability of yExp - ColRank > 0
-	[nm] (h=1)&(l=0) ->	0.1855 : (l'=1) + 0.8145 : (l'=2); // High input of being a non-minority, transition using a compound probability of yExp - ColRank > -5
+	[] (h=0)&(l=0) -> 0.0062 : (l'=1) + 0.9938 : (x'=1);
+	[] (h=1)&(l=0) -> 0.02275 : (l'=1) + 0.97725 : (x'=2);	
+
+	[m] (x=1)&(l=0) -> 0.0899 : (l'=1) + 0.9101 : (l'=2); // High input of being a minority, transition using a compound probability of yExp - ColRank > 0
+	[nm] (x=2)&(l=0) -> 0.1855 : (l'=1) + 0.8145 : (l'=2); // High input of being a non-minority, transition using a compound probability of yExp - ColRank > -5
 	
 	//[hire] (x=1)|(x=3) -> 1 : (l'=1); // expRank > 0, transition to low output for being hired
 	//[nonhire] (x=2)|(x=4) -> 1 : (l'=2); // expRank >-5, transition to low output for being hired
