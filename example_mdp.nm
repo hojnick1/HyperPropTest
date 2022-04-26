@@ -25,14 +25,14 @@ module M
 endmodule
 
 label "minority" = h=0;
-label "non-minority" = h=1;
+label "non_minority" = h=1;
 
 label "ER>0-minority" = x=1;
-label "ER<=0-minority" = x=2;
+label "ER<=0_minority" = x=2;
 
-label "ER>-5-non-minority" = x=3;
-label "ER<=-5-non-minority" = x=4;
+label "ER>!5_non_minority" = x=3;
+label "ER<=!5_non_minority" = x=4;
 
-label "Low Output - hired" = l=1;
-label "Low Output - not hired" = l=2;
+label "hired" = l=1;
+label "not_hired" = l=2;
 	
