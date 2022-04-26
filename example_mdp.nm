@@ -30,8 +30,8 @@ label "non_minority" = h=1;
 label "ERgt0_minority" = x=1;
 label "ERlte0_minority" = x=2;
 
-label "ERgt!5_non_minority" = x=3;
-label "ERlte!5_non_minority" = x=4;
+label "ERgtneg5_non_minority" = x=3;
+label "ERlteneg5_non_minority" = x=4;
 
 label "hired" = l=1;
 label "not_hired" = l=2;
